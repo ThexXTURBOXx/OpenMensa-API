@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -19,7 +20,9 @@
     <licenses>
         <license>
             <name>GPL-3.0 License</name>
-            <url>https://github.com/ThexXTURBOXx/openmensa-java-api/blob/master/LICENSE</url>
+            <url>
+                https://github.com/ThexXTURBOXx/openmensa-java-api/blob/master/LICENSE
+            </url>
             <distribution>repo</distribution>
             <comments>GNU General Public License v3.0</comments>
         </license>
@@ -42,26 +45,21 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.squareup.okhttp3</groupId>
-            <artifactId>okhttp</artifactId>
-            <version>4.1.0</version>
+            <groupId>de.femtopedia.studip</groupId>
+            <artifactId>shib-uni-passau</artifactId>
+            <version>1.8.1</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
-            <version>2.8.5</version>
-            <scope>compile</scope>
+            <version>2.8.6</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.8</version>
-        </dependency>
-        <dependency>
-            <groupId>de.femtopedia.studip</groupId>
-            <artifactId>shib-uni-passau</artifactId>
-            <version>1.6</version>
+            <version>1.18.12</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -72,13 +70,18 @@
         </snapshotRepository>
         <repository>
             <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/
+            </url>
         </repository>
     </distributionManagement>
 
     <scm>
-        <connection>scm:git:git://github.com/ThexXTURBOXx/openmensa-java-api.git</connection>
-        <developerConnection>scm:git:git@github.com:ThexXTURBOXx/openmensa-java-api.git</developerConnection>
+        <connection>
+            scm:git:git://github.com/ThexXTURBOXx/openmensa-java-api.git
+        </connection>
+        <developerConnection>
+            scm:git:git@github.com:ThexXTURBOXx/openmensa-java-api.git
+        </developerConnection>
         <url>https://github.com/ThexXTURBOXx/openmensa-java-api</url>
         <tag>HEAD</tag>
     </scm>
@@ -97,7 +100,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.1.1</version>
+                <version>3.2.0</version>
                 <executions>
                     <execution>
                         <id>attach-javadoc</id>
@@ -110,7 +113,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>3.2.1</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -123,12 +126,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>3.1.1</version>
                 <dependencies>
                     <dependency>
                         <groupId>com.puppycrawl.tools</groupId>
                         <artifactId>checkstyle</artifactId>
-                        <version>8.29</version>
+                        <version>8.31</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -153,7 +156,8 @@
                     <localCheckout>true</localCheckout>
                     <pushChanges>false</pushChanges>
                     <mavenExecutorId>forked-path</mavenExecutorId>
-                    <arguments>-Dgpg.passphrase=${gpg.passphrase} -Ddo-release</arguments>
+                    <arguments>-Dgpg.passphrase=${gpg.passphrase} -Ddo-release
+                    </arguments>
                 </configuration>
                 <dependencies>
                     <dependency>
